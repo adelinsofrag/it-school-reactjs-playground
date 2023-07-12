@@ -1,8 +1,8 @@
 import "./App.css";
-import MealsListContainer from "./MealsListContainer";
+import HomepageView from "./views/HomepageView";
 
 function App() {
-  return <MealsListContainer />;
+  return <HomepageView />;
 }
 
 export default App;
