@@ -1,17 +1,17 @@
 import React from "react";
-import logo from "./../logo.svg";
-
-import MealDetailsComponent from "../components/MealDetailsComponent";
+import MealQuickInfoComponent from "../components/MealQuickInfoComponent";
+import mockData from "../mock";
 
 function RandomMealsContainer() {
   return (
-    <div style={{ display: "flex" }}>
-      <MealDetailsComponent imageSRC={logo} />
-      <MealDetailsComponent imageSRC={logo} />
-      <MealDetailsComponent imageSRC={logo} />
-      <MealDetailsComponent imageSRC={logo} />
-      <MealDetailsComponent imageSRC={logo} />
-      <MealDetailsComponent imageSRC={logo} />
+    <div>
+      {mockData.meals.map((meal) => (
+        <MealQuickInfoComponent
+          key={meal.idMeal}
+          title={meal.strMeal}
+          description={meal.strArea}
+        />
+      ))}
     </div>
   );
 }

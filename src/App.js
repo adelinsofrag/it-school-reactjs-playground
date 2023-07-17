@@ -1,8 +1,8 @@
 import "./App.css";
-import HomepageView from "./views/HomepageView";
+import HomePage from "./pages/HomePage";
 
 function App() {
-  return <HomepageView />;
+  return <HomePage />;
 }
 
 export default App;
