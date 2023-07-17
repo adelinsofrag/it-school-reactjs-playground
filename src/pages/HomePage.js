@@ -3,7 +3,7 @@ import MealsListContainer from "../containers/MealsListContainer";
 import RandomMealsContainer from "../containers/RandomMealsContainer";
 import SideContainer from "../containers/SideContainer";
 
-function HomepageView() {
+function HomePage() {
   return (
     <>
       <div style={{ display: "flex", flexDirection: "row" }}>
@@ -17,4 +17,4 @@ function HomepageView() {
   );
 }
 
-export default HomepageView;
+export default HomePage;
