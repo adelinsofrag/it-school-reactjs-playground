@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MealDetailsComponent from "../components/MealDetailsComponent";
 import TitleComponent from "../components/TitleComponent";
-import mockData from "../mock";
+import mockData from "../assets/mock";
 import { useParams } from "react-router-dom";
 
 const style = {
