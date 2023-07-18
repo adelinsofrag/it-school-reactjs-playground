@@ -1,19 +1,22 @@
-import { BrowserRouter, Form, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import HomepageView from "./views/HomepageView";
-import TestPage from "./views/TestPage";
-import FormPage from "./views/FormPage";
+
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomepageView />} />
-        <Route path="/testing" element={<TestPage/>} />
-        <Route path="/testing/:param" element={<TestPage/>} />
-        <Route path="/form" element={<FormPage/>} />
-      </Routes>
-    </BrowserRouter>
+    <div className="container-fluid">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

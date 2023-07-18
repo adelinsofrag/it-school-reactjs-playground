@@ -1,17 +1,18 @@
 import React from "react";
-import logo from "./../logo.svg";
-
-import MealDetailsComponent from "../components/MealDetailsComponent";
+import MealQuickInfoComponent from "../components/MealQuickInfoComponent";
+import mockData from "../assets/mock";
 
 function RandomMealsContainer() {
   return (
-    <div style={{ display: "flex" }}>
-      <MealDetailsComponent imageSRC={logo} />
-      <MealDetailsComponent imageSRC={logo} />
-      <MealDetailsComponent imageSRC={logo} />
-      <MealDetailsComponent imageSRC={logo} />
-      <MealDetailsComponent imageSRC={logo} />
-      <MealDetailsComponent imageSRC={logo} />
+    <div className="d-flex flex-row gap-4 flex-nowrap">
+      {mockData.meals.slice(0, 4).map((meal) => (
+        <MealQuickInfoComponent
+          key={meal.idMeal}
+          title={meal.strMeal}
+          description={meal.strArea}
+          imageSRC={meal.strMealThumb}
+        />
+      ))}
     </div>
   );
 }

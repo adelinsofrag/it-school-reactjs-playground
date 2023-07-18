@@ -1,66 +1,51 @@
 import React from "react";
 
-// Refactor: (adunam toate variabilele intr-un singur Style Object.)
 const style = {
   details: {
     backgroundColor: "blanchedalmond",
     borderRadius: "10px",
-    padding: "5px 15px 5px 85px",
+    textAlign: "center",
   },
   detailsWrapper: {
-    padding: "10px 0",
     backgroundColor: "transparent",
-    transform: "translate(-75px, 0px)",
     zIndex: "-1",
-  },
-  title: {
-    fontSize: "22px",
-    color: "green",
   },
   image: {
     borderRadius: "50%",
     border: "2px solid black",
-    width: 180,
-    height: 180,
-  },
-  info: {
-    color: "grey",
-  },
-  label: {
-    color: "black",
-    fontSize: "12px",
+    width: 120,
+    height: 120,
+    top: "-50%",
+    left: "-10px",
+    zIndex: 1,
   },
   wrapper: {
     display: "flex",
     alignItems: "center",
-    fontFamily: 'Arial'
+    fontFamily: "Arial",
   },
 };
 
 function MealDetailsComponent(props) {
   return (
-    <>
+    <div className="col-12 col-md-6 col-xlg-4 gx-5 py-4">
       <div style={style.wrapper}>
-        <img src={props.imageSRC} alt={props.title} style={style.image} />
-
-        <div style={style.detailsWrapper}>
-          <div style={style.details}>
-            <h3 style={style.title}>{props.title}</h3>
-
-            <div style={style.info}>
-              <p>
-                <span style={style.label}>Area: </span>
-                {props.area}
-              </p>
-              <p>
-                <span style={style.label}>Category: </span>
-                {props.category}
-              </p>
-            </div>
+        <div style={style.detailsWrapper} className="w-100 position-relative">
+          <img
+            src={props.imageSRC}
+            alt={props.title}
+            style={style.image}
+            className="position-absolute"
+          />
+          <div className="card w-75">
+            <p className="mb-0 card-body text-truncate text-end">{props.title}</p>
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success font-monospace">
+              new
+            </span>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

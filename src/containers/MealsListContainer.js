@@ -1,46 +1,20 @@
-import React from "react";
 import MealDetailsComponent from "../components/MealDetailsComponent";
 import TitleComponent from "../components/TitleComponent";
 
-const style = {
-  row: {
-    display: "flex",
-    flexWrap: "wrap",
-    marginRight: "-15px",
-    marginLeft: "-15px",
-  },
-};
-
-const MealsListContainer = () => {
+const MealsListContainer = (props) => {
   return (
-    <div style={{ width: "100%" }}>
-      <TitleComponent text="Latest Meals" />
-
-      <div style={style.row}>
-        <div style={style.col}>
+    <div className="w-100 p-3">
+      <div className="mb-4">
+        <TitleComponent text={`Latest Meals`} />
+      </div>
+      <div className="row row-gap-5">
+        {props.data.meals.slice(0, 10).map((meal) => (
           <MealDetailsComponent
-            imageSRC="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg"
-            title="Spicy Arrabiata Penne"
-            area="Italian"
-            category="Vegetarian"
+            title={meal.strMeal}
+            imageSRC={meal.strMealThumb}
+            key={meal.idMeal}
           />
-        </div>
-        <div style={style.col}>
-          <MealDetailsComponent
-            imageSRC="https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg"
-            title="Chicken Handi"
-            area="Indian"
-            category="Chicken"
-          />
-        </div>
-        <div style={style.col}>
-          <MealDetailsComponent
-            imageSRC="https://www.themealdb.com/images/media/meals/1550440197.jpg"
-            title="Salmon Eggs Eggs Benedict"
-            area="American"
-            category="Breakfast"
-          />
-        </div>
+        ))}
       </div>
     </div>
   );
