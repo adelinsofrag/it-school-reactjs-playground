@@ -28,7 +28,7 @@ const style = {
 
 function MealDetailsComponent(props) {
   return (
-    <div className="col-12 col-md-6 col-lg-4 gx-5 py-4">
+    <div className="col-12 col-md-6 col-xlg-4 gx-5 py-4">
       <div style={style.wrapper}>
         <div style={style.detailsWrapper} className="w-100 position-relative">
           <img
@@ -39,7 +39,7 @@ function MealDetailsComponent(props) {
           />
           <div className="card w-75">
             <p className="mb-0 card-body text-truncate text-end">{props.title}</p>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success font-monospace">
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success font-monospace">
               new
             </span>
           </div>
