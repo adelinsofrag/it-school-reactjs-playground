@@ -23,8 +23,9 @@ const MealsListContainer = (props) => {
 
   return (
     <div className="w-100 p-3">
-      <TitleComponent text={`Latest Meals`} />
-
+      <div className="mb-4">
+        <TitleComponent text={`Latest Meals`} />
+      </div>
       <div className="row row-gap-5">
         {data.meals.slice(0, 6).map((meal) => (
           <MealDetailsComponent

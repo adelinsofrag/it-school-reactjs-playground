@@ -37,8 +37,11 @@ function MealDetailsComponent(props) {
             style={style.image}
             className="position-absolute"
           />
-          <div className="card">
+          <div className="card w-75">
             <p className="mb-0 card-body text-truncate text-end">{props.title}</p>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success font-monospace">
+              new
+            </span>
           </div>
         </div>
       </div>

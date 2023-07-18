@@ -12,7 +12,7 @@ import FormPage from "./pages/FormPage";
 
 function App() {
   return (
-    <div className="container-fluid py-2">
+    <div className="container-fluid">
       <BrowserRouter>
         <Routes>
           <Route path="/home" element={<HomePage />} />

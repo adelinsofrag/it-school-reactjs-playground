@@ -6,7 +6,12 @@ function RandomMealsContainer() {
   return (
     <div className="d-flex flex-row gap-4 flex-nowrap">
       {mockData.meals.slice(0, 4).map((meal) => (
-        <MealQuickInfoComponent key={meal.idMeal} title={meal.strMeal} description={meal.strArea} />
+        <MealQuickInfoComponent
+          key={meal.idMeal}
+          title={meal.strMeal}
+          description={meal.strArea}
+          imageSRC={meal.strMealThumb}
+        />
       ))}
     </div>
   );
