@@ -5,26 +5,29 @@ import SideContainer from "../containers/SideContainer";
 import mockData from "../assets/mock";
 
 function HomePage() {
+  // TODO: explain these
   const [meals, setMeals] = useState(mockData);
   const [searchValue, setSearchValue] = useState("");
 
+  // TODO: usage?
   const handleInputChange = (e) => {
     setSearchValue(e.target.value);
   };
 
+  // TODO: what does useEffect do?
   useEffect(() => {
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`) // TODO: from where does this come?
       .then((response) => {
         return response.json();
       })
       .then((responseJSON) => {
-        setMeals(responseJSON);
+        setMeals(responseJSON); // TODO: why do this?
       });
-  }, [searchValue]);
+  }, [searchValue]); // TODO: what is this array?
 
   return (
     <>
-      {/* replaced the TopNav with the actual markup */}
+      {/* TODO: explain the changes */}
       <div className="d-flex p-2">
         <div className="navbar-brand" style={{ width: "250px" }}>
           Brand
@@ -35,8 +38,8 @@ function HomePage() {
               type="text"
               className="form-control form-control-lg"
               placeholder="Search"
-              value={searchValue}
-              onChange={handleInputChange}
+              value={searchValue} // TODO: What is this prop?
+              onChange={handleInputChange} // TODO: What is this prop?
             ></input>
           </form>
         </div>
@@ -49,7 +52,8 @@ function HomePage() {
           <div className="py-5 px-3">
             <RandomMealsContainer />
           </div>
-          <MealsListContainer data={meals} />
+          {/* TODO: usage for data prop? */}
+          <MealsListContainer data={meals} /> 
         </div>
       </div>
     </>

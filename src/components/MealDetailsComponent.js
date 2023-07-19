@@ -30,24 +30,25 @@ const style = {
 function MealDetailsComponent(props) {
   return (
     <div className="col-12 col-md-6 col-xlg-4 gx-5 py-4">
+      {/* TODO: what is Link? */}
+      {/* <Link to="/meals"> */}
       <div style={style.wrapper}>
-        {/* <Link to="/test"> */}
-          <div style={style.detailsWrapper} className="w-100 position-relative">
-            <img
-              src={props.imageSRC}
-              alt={props.title}
-              style={style.image}
-              className="position-absolute"
-            />
-            <div className="card w-75">
-              <p className="mb-0 card-body text-truncate text-end">{props.title}</p>
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success font-monospace">
-                new
-              </span>
-            </div>
+        <div style={style.detailsWrapper} className="w-100 position-relative">
+          <img
+            src={props.imageSRC}
+            alt={props.title}
+            style={style.image}
+            className="position-absolute"
+          />
+          <div className="card w-75">
+            <p className="mb-0 card-body text-truncate text-end">{props.title}</p>
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success font-monospace">
+              new
+            </span>
           </div>
-        {/* </Link> */}
+        </div>
       </div>
+      {/* </Link> */}
     </div>
   );
 }

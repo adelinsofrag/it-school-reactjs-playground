@@ -5,6 +5,7 @@ import mockData from "../assets/mock";
 function RandomMealsContainer() {
   return (
     <div className="d-flex flex-row gap-4 flex-nowrap">
+    {/* TODO: why sliced? */}
       {mockData.meals.slice(0, 4).map((meal) => (
         <MealQuickInfoComponent
           key={meal.idMeal}
