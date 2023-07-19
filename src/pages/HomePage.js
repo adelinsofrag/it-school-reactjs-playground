@@ -6,7 +6,6 @@ import mockData from "../assets/mock";
 
 function HomePage() {
   const [meals, setMeals] = useState(mockData);
-
   const [searchValue, setSearchValue] = useState("");
 
   const handleInputChange = (e) => {
