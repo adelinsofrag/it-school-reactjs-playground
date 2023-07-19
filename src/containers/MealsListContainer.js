@@ -13,7 +13,7 @@ const MealsListContainer = (props) => {
             title={meal.strMeal}
             imageSRC={meal.strMealThumb}
             key={meal.idMeal}
-            id={meal.id}
+            idMeal={meal.idMeal}
           />
         ))}
       </div>
