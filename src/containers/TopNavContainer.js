@@ -2,7 +2,7 @@ import React from "react";
 import logo from "./../assets/img/fork-spoon-with-egg-logo-design-vector_15473-14619.jpg";
 import { Link } from "react-router-dom";
 
-function TopNavContainer({ searchValue, handleInputChange, logoOnly }) {
+const TopNavContainer = ({ searchValue, handleInputChange, logoOnly }) => {
   return (
     <div className="d-flex p-2 sticky-top bg-white">
       <div className="navbar-brand" style={{ width: "250px", height: "60px" }}>
@@ -27,6 +27,6 @@ function TopNavContainer({ searchValue, handleInputChange, logoOnly }) {
       )}
     </div>
   );
-}
+};
 
 export default TopNavContainer;
