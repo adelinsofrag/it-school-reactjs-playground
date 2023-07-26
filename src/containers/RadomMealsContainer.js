@@ -3,7 +3,7 @@ import RandomMealComponent from "../components/RandomMealComponent";
 
 const RandomMealsContainer = () => {
   return (
-    <div className="row row-cols-5 justify-content-between g-1 d-none d-md-flex">
+    <div className="row row-cols-12 row-cols-md-5 justify-content-between g-1 d-none d-md-flex">
       <RandomMealComponent />
       <RandomMealComponent />
       <RandomMealComponent />

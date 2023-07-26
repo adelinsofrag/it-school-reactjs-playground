@@ -42,7 +42,7 @@ function MealComponent(props) {
             <div className="card w-75">
               <p className="mb-0 card-body text-truncate text-end">{props.title}</p>
               <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success font-monospace">
-                new
+                {props.area}
               </span>
             </div>
           </div>

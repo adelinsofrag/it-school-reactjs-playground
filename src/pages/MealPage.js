@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import MealContainer from "../containers/MealContainer";
+import TopNavContainer from "../containers/TopNavContainer";
 
 export const MealPage = () => {
   let { idMeal } = useParams();
@@ -17,16 +18,19 @@ export const MealPage = () => {
   }, [idMeal]);
 
   return (
-    data.meals &&
-    data.meals.map((item) => (
-      <MealContainer
-        key={item.idMeal}
-        strYoutube={item.strYoutube}
-        strMeal={item.strMeal}
-        strMealThumb={item.strMealThumb}
-        strInstructions={item.strInstructions}
-        data={item}
-      />
-    ))
+    <>
+      <TopNavContainer logoOnly={true} />
+      {data.meals &&
+        data.meals.map((item) => (
+          <MealContainer
+            key={item.idMeal}
+            strYoutube={item.strYoutube}
+            strMeal={item.strMeal}
+            strMealThumb={item.strMealThumb}
+            strInstructions={item.strInstructions}
+            data={item}
+          />
+        ))}
+    </>
   );
 };

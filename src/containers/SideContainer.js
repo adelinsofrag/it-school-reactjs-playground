@@ -45,7 +45,7 @@ const SideContainer = () => {
             aria-labelledby="panelsStayOpen-headingOne"
           >
             <div className="accordion-body">
-              <SideListComponent title={"Categories"} data={categories} field={"strCategory"} />
+              <SideListComponent data={categories} field={"strCategory"} />
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@ const SideContainer = () => {
             aria-labelledby="panelsStayOpen-headingTwo"
           >
             <div className="accordion-body">
-              <SideListComponent title={"Areas"} data={areas} field={"strArea"} />
+              <SideListComponent data={areas} field={"strArea"} />
             </div>
           </div>
         </div>

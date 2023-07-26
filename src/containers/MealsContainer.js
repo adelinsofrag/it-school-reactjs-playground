@@ -8,14 +8,19 @@ const MealsContainer = (props) => {
         <TitleComponent text={props.title} />
       </div>
       <div className="row row-gap-5">
-        {props.data.meals.slice(0, 10).map((meal) => (
-          <MealComponent
-            title={meal.strMeal}
-            imageSRC={meal.strMealThumb}
-            key={meal.idMeal}
-            idMeal={meal.idMeal}
-          />
-        ))}
+        {/* TODO: error handling when no results */}
+        {props.data.meals &&
+          props.data.meals
+            .slice(0, 10)
+            .map((meal) => (
+              <MealComponent
+                title={meal.strMeal}
+                imageSRC={meal.strMealThumb}
+                area={meal.strArea}
+                key={meal.idMeal}
+                idMeal={meal.idMeal}
+              />
+            ))}
       </div>
     </div>
   );
