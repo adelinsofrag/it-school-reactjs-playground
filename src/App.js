@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
+import "./assets/css/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
@@ -9,7 +9,7 @@ import { MealPage } from "./pages/MealPage";
 
 function App() {
   return (
-    <div className="container-fluid">
+    <div className="container">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />

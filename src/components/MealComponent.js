@@ -29,7 +29,7 @@ const style = {
 
 function MealComponent(props) {
   return (
-    <div className="col-12 col-md-6 col-xlg-4 gx-5 py-4">
+    <div className="col-12 col-md-4 gx-4 py-4">
       <Link to={`/meals/${props.idMeal}`}>
         <div style={style.wrapper}>
           <div style={style.detailsWrapper} className="w-100 position-relative">

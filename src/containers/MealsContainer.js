@@ -5,7 +5,7 @@ const MealsContainer = (props) => {
   return (
     <div className="w-100 p-3">
       <div className="mb-4">
-        <TitleComponent text={`Latest Meals`} />
+        <TitleComponent text={props.title} />
       </div>
       <div className="row row-gap-5">
         {props.data.meals.slice(0, 10).map((meal) => (
