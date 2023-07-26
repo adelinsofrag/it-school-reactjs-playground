@@ -2,10 +2,11 @@ import React from "react";
 import MealQuickInfoComponent from "../components/MealQuickInfoComponent";
 import mockData from "../assets/mock";
 
+// www.themealdb.com/api/json/v1/1/random.php
+
 function RandomMealsContainer() {
   return (
     <div className="d-flex flex-row gap-4 flex-nowrap">
-    {/* TODO: why sliced? */}
       {mockData.meals.slice(0, 4).map((meal) => (
         <MealQuickInfoComponent
           key={meal.idMeal}

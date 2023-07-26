@@ -1,55 +1,39 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-const style = {
-  details: {
-    backgroundColor: "blanchedalmond",
-    borderRadius: "10px",
-    textAlign: "center",
-  },
-  detailsWrapper: {
-    backgroundColor: "transparent",
-    zIndex: "-1",
-  },
-  image: {
-    borderRadius: "50%",
-    border: "2px solid black",
-    width: 120,
-    height: 120,
-    top: "-50%",
-    left: "-10px",
-    zIndex: 1,
-  },
-  wrapper: {
-    display: "flex",
-    alignItems: "center",
-    fontFamily: "Arial",
-  },
-};
-
-function MealDetailsComponent(props) {
+const MealDetailsComponent = ({ instructions, data }) => {
   return (
-    <div className="col-12 col-md-6 col-xlg-4 gx-5 py-4">
-      <Link to={`/meals/${props.idMeal}`}>
-        <div style={style.wrapper}>
-          <div style={style.detailsWrapper} className="w-100 position-relative">
-            <img
-              src={props.imageSRC}
-              alt={props.title}
-              style={style.image}
-              className="position-absolute"
-            />
-            <div className="card w-75">
-              <p className="mb-0 card-body text-truncate text-end">{props.title}</p>
-              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success font-monospace">
-                new
-              </span>
-            </div>
-          </div>
-        </div>
-      </Link>
-    </div>
+    <>
+      <div className="card-body">
+        <h5 className="card-title">Instructions</h5>
+        {instructions.map((instructionRow) => (
+          <p className="card-text" key={Math.random()}>
+            {instructionRow}
+          </p>
+        ))}
+      </div>
+
+      <div className="card-body">
+        <h5 className="card-title">Ingredients</h5>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">
+            {data.strIngredient1} : {data.strMeasure1}
+          </li>
+          <li className="list-group-item">
+            {data.strIngredient2} : {data.strMeasure2}
+          </li>
+          <li className="list-group-item">
+            {data.strIngredient3} : {data.strMeasure3}
+          </li>
+          <li className="list-group-item">
+            {data.strIngredient4} : {data.strMeasure4}
+          </li>
+          <li className="list-group-item">
+            {data.strIngredient5} : {data.strMeasure5}
+          </li>
+        </ul>
+      </div>
+    </>
   );
-}
+};
 
 export default MealDetailsComponent;
