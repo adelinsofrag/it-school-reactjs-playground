@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
 import "./assets/css/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -12,16 +12,18 @@ function App() {
   return (
     <div className="container">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="*" element={<PageNotFound />} />
+        <HashRouter basename="/">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="*" element={<PageNotFound />} />
 
-          <Route path="/meals" element={<HomePage />} />
-          <Route path="/meals/:idMeal" element={<MealPage />} />
-          <Route path="/favorites" element={<FavoritesMealsPage />} />
-          {/* TODO:User */}
-          {/* <Route path="/user" element={<UserPage />} /> */}
-        </Routes>
+            <Route path="/meals" element={<HomePage />} />
+            <Route path="/meals/:idMeal" element={<MealPage />} />
+            <Route path="/favorites" element={<FavoritesMealsPage />} />
+            {/* TODO:User */}
+            {/* <Route path="/user" element={<UserPage />} /> */}
+          </Routes>
+        </HashRouter>
       </BrowserRouter>
     </div>
   );
