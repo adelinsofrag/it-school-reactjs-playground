@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ab8da73f.css",
+    "main.js": "/static/js/main.a2623d55.js",
+    "static/js/787.ef9cd59f.chunk.js": "/static/js/787.ef9cd59f.chunk.js",
+    "static/media/fork-spoon-with-egg-logo-design-vector_15473-14619.jpg": "/static/media/fork-spoon-with-egg-logo-design-vector_15473-14619.ac7b9cf8d30061158f90.jpg",
+    "index.html": "/index.html",
+    "main.ab8da73f.css.map": "/static/css/main.ab8da73f.css.map",
+    "main.a2623d55.js.map": "/static/js/main.a2623d55.js.map",
+    "787.ef9cd59f.chunk.js.map": "/static/js/787.ef9cd59f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ab8da73f.css",
+    "static/js/main.a2623d55.js"
+  ]
+}
