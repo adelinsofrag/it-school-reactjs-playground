@@ -19,7 +19,7 @@ export const MealPage = () => {
 
   return (
     <>
-      <TopNavContainer logoOnly={true} />
+      <TopNavContainer noSearchBar={true} />
       {data.meals &&
         data.meals.map((item) => (
           <MealContainer

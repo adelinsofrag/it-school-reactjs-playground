@@ -5,11 +5,17 @@ const MealDetailsComponent = ({ instructions, data }) => {
     <>
       <div className="card-body">
         <h5 className="card-title">Instructions</h5>
-        {instructions.map((instructionRow) => (
+        {Array.isArray(instructions) ? (
+          instructions.map((instructionRow) => (
+            <p className="card-text" key={Math.random()}>
+              {instructionRow}
+            </p>
+          ))
+        ) : (
           <p className="card-text" key={Math.random()}>
-            {instructionRow}
+            {instructions}
           </p>
-        ))}
+        )}
       </div>
 
       <div className="card-body">

@@ -10,17 +10,22 @@ const MealContainer = ({ strYoutube, strMeal, strMealThumb, strInstructions, dat
   // add an empty structure
   const mealDataFromLocalStorage = JSON.parse(localStorage.getItem("meals")) || [{}];
   const [mealData, setMealData] = useState(mealDataFromLocalStorage);
+  const [text, setText] = useState("♡ Add to Favorites");
 
   const handleClick = () => {
-    // set the meal data into stat by pushing the current values
-    setMealData([
-      ...mealData,
-      {
-        strMeal,
-        strMealThumb,
-        idMeal: data.idMeal,
-      },
-    ]);
+    // check if it's already there
+    if (!mealDataFromLocalStorage.some((itemInLS) => itemInLS.idMeal === data.idMeal))
+      // set the meal data into stat by pushing the current values
+      setMealData([
+        ...mealData,
+        {
+          strMeal,
+          strMealThumb,
+          idMeal: data.idMeal,
+        },
+      ]);
+
+    setText("♡ Added");
   };
 
   useEffect(() => {
@@ -32,18 +37,15 @@ const MealContainer = ({ strYoutube, strMeal, strMealThumb, strInstructions, dat
   return (
     <>
       <div className="container px-4 py-5" id="custom-cards">
-        <div className="d-flex flex-row justify-content-between w-100 border-bottom">
-          <h2 className="pb-2">{strMeal}</h2>
-          <ButtonComponent text={"Mark as favorite"} onClickEvent={handleClick} />
+        <div className="d-flex flex-row justify-content-between w-100 align-items-center">
+          <h2 className="mb-2 text-dark fw-bold">{strMeal}</h2>
+          <ButtonComponent text={text} onClickEvent={handleClick} />
         </div>
         <div className="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
           <div className="col">
             <div className="card card-cover h-100 overflow-hidden text-black rounded-3">
               <div className="d-flex flex-column h-100 p-3 text-black text-shadow-1">
-                <MealDetailsComponent
-                  instructions={strInstructions.split(/(?<=[.!?])\s+/)}
-                  data={data}
-                />
+                <MealDetailsComponent instructions={strInstructions} data={data} />
               </div>
             </div>
           </div>

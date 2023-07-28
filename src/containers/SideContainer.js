@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SideListComponent from "../components/SideListComponent";
+import { Link } from "react-router-dom";
 
 const SideContainer = () => {
   const [categories, setCategories] = useState([]);
@@ -25,11 +26,18 @@ const SideContainer = () => {
       className="d-flex flex-column ps-2 pe-5 py-4 d-none d-md-flex overflow-y-scroll"
       style={{ width: "250px" }}
     >
+      <Link
+        to="/favorites"
+        className="btn bg-white text-start border-bottom text-dark fw-bold px-0 rounded-0"
+      >
+        ♡ Favorites
+      </Link>
+
       <div className="accordion accordion-flush" id="accordionFlushExample">
         <div className="accordion-item">
-          <h2 className="accordion-header" id="flush-headingOne">
+          <h2 className="accordion-header text-start" id="flush-headingOne">
             <button
-              className="accordion-button bg-white"
+              className="accordion-button px-0 bg-white text-dark"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#panelsStayOpen-collapseOne"
@@ -50,9 +58,9 @@ const SideContainer = () => {
           </div>
         </div>
         <div className="accordion-item">
-          <h2 className="accordion-header" id="flush-headingTwo">
+          <h2 className="accordion-header text-start" id="flush-headingTwo">
             <button
-              className="accordion-button collapsed bg-white"
+              className="accordion-button px-0 collapsed bg-white text-dark"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#panelsStayOpen-collapseTwo"
