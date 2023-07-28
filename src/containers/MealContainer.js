@@ -12,7 +12,7 @@ const MealContainer = ({ strYoutube, strMeal, strMealThumb, strInstructions, dat
   const [mealData, setMealData] = useState(mealDataFromLocalStorage);
   const [text, setText] = useState("♡ Add to Favorites");
 
-  const handleClick = () => {
+  const handleAddToFavorites = () => {
     // check if it's already there
     if (!mealDataFromLocalStorage.some((itemInLS) => itemInLS.idMeal === data.idMeal))
       // set the meal data into stat by pushing the current values
@@ -28,6 +28,19 @@ const MealContainer = ({ strYoutube, strMeal, strMealThumb, strInstructions, dat
     setText("♡ Added");
   };
 
+  const handleCopyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(`
+      Meal: ${strMeal}
+
+      Instructions: ${data.strInstructions}
+    `);
+      console.log("Content copied to clipboard");
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
+  };
+
   useEffect(() => {
     // when the meaData is updated by the click event,
     // add the new structure into the LStorage
@@ -39,7 +52,14 @@ const MealContainer = ({ strYoutube, strMeal, strMealThumb, strInstructions, dat
       <div className="container px-4 py-5" id="custom-cards">
         <div className="d-flex flex-row justify-content-between w-100 align-items-center">
           <h2 className="mb-2 text-dark fw-bold">{strMeal}</h2>
-          <ButtonComponent text={text} onClickEvent={handleClick} />
+          <div className="d-flex gap-3">
+            <ButtonComponent type={"success"} text={text} onClickEvent={handleAddToFavorites} />
+            <ButtonComponent
+              type={"dark"}
+              text={"Copy to clipboard"}
+              onClickEvent={handleCopyToClipboard}
+            />
+          </div>
         </div>
         <div className="row row-cols-1 row-cols-lg-2 align-items-stretch g-4 py-5">
           <div className="col">

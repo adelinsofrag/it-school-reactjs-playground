@@ -15,12 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<PageNotFound />} />
-
           <Route path="/meals" element={<HomePage />} />
           <Route path="/meals/:idMeal" element={<MealPage />} />
           <Route path="/favorites" element={<FavoritesMealsPage />} />
-          {/* TODO:User */}
-          {/* <Route path="/user" element={<UserPage />} /> */}
         </Routes>
       </BrowserRouter>
     </div>
